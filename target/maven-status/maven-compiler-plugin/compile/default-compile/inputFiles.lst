@@ -1,0 +1,10 @@
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/DemoApplication.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/config/GeminiConfig.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/config/OpenAiConfig.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/config/WebConfig.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/controller/ScenarioAnalysisController.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/model/OpenAiMessage.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/model/OpenAiRequest.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/model/ScenarioAnalysisRequest.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/model/ScenarioAnalysisResponse.java
+/Users/baranirajendran/Downloads/Prompt - Engineering/src/main/java/com/example/demo/service/AiService.java

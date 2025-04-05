@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "name": "gemini",
+      "type": "com.example.demo.config.GeminiConfig",
+      "sourceType": "com.example.demo.config.GeminiConfig"
+    },
+    {
+      "name": "openai",
+      "type": "com.example.demo.config.OpenAiConfig",
+      "sourceType": "com.example.demo.config.OpenAiConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "gemini.api-key",
+      "type": "java.lang.String",
+      "sourceType": "com.example.demo.config.GeminiConfig"
+    },
+    {
+      "name": "gemini.model",
+      "type": "java.lang.String",
+      "sourceType": "com.example.demo.config.GeminiConfig"
+    },
+    {
+      "name": "openai.api-key",
+      "type": "java.lang.String",
+      "sourceType": "com.example.demo.config.OpenAiConfig"
+    },
+    {
+      "name": "openai.model",
+      "type": "java.lang.String",
+      "sourceType": "com.example.demo.config.OpenAiConfig"
+    }
+  ],
+  "hints": []
+}
