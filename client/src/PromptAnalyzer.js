@@ -91,32 +91,18 @@ export default function PromptAnalyzer() {
   };
 
   const renderStrategies = () => {
-    const strategies = response?.proposedStrategies?.trim();
+    const rawStrategies = response?.proposedStrategies;
+    const strategies = typeof rawStrategies === 'string' ? rawStrategies.trim() : '';
   
     if (!strategies || strategies.length < 10) return null;
   
     return (
-      <Box sx={{ mt: 2 }}>
-        <Typography variant="h6" sx={{ fontWeight: 600, color: '#f5f5f5' }}>
-          Proposed Strategies
-        </Typography>
-        <Box
-          sx={{
-            mt: 1,
-            backgroundColor: '#1e1e1e',
-            p: 2,
-            borderRadius: 2,
-            overflowX: 'auto',
-            color: '#ffffff',
-          }}
-        >
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {strategies}
-          </ReactMarkdown>
-        </Box>
+      <Box mt={4}>
+        <Typography variant="h6" gutterBottom>Proposed Strategies</Typography>
+        <ReactMarkdown>{strategies}</ReactMarkdown>
       </Box>
     );
-  };
+  };  
 
   return (
     <Box sx={{ backgroundColor: '#121212', minHeight: '100vh', py: 4 }}>
