@@ -63,6 +63,11 @@ export default function PromptAnalyzer() {
         return;
       }
   
+      if (constraints.length < 2) {
+        setError("Please provide at least 2 constraints.");
+        return;
+      }
+
       setScenarioError("");
       setError("");
       setLoading(true);
