@@ -28,7 +28,7 @@ export default function PromptAnalyzer() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [scenarioError, setScenarioError] = useState("");
+  const [scenarioError, setScenarioError] = useState('');
   const [constraintError, setConstraintError] = useState('');
 
   const theme = useTheme();
@@ -67,12 +67,12 @@ export default function PromptAnalyzer() {
       }
   
       if (constraints.length < 2) {
-        setError("Please provide at least 2 constraints.");
+        setConstraintError("Please provide at least 2 constraints.");
         return;
       }
 
       setScenarioError("");
-      setError("");
+      setConstraintError("");
       setLoading(true);
       setResponse(null);
     try {
@@ -97,8 +97,10 @@ export default function PromptAnalyzer() {
           <Typography variant="h6" sx={{ fontWeight: 600, color: '#f5f5f5' }}>
             Proposed Strategies
           </Typography>
-          <Box sx={{ mt: 1, backgroundColor: '#1e1e1e', p: 2, borderRadius: 2 }}>
-            <ReactMarkdown>{response.proposedStrategies}</ReactMarkdown>
+          <Box sx={{ mt: 1, backgroundColor: '#1e1e1e', p: 2, borderRadius: 2, overflowX: 'auto' }}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {response.proposedStrategies}
+            </ReactMarkdown>
           </Box>
         </Box>
       )
