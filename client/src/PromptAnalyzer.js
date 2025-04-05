@@ -91,19 +91,30 @@ export default function PromptAnalyzer() {
   };
 
   const renderStrategies = () => {
+    const strategies = response?.proposedStrategies?.trim();
+  
+    if (!strategies || strategies.length < 10) return null;
+  
     return (
-      response?.proposedStrategies && (
-        <Box sx={{ mt: 2 }}>
-          <Typography variant="h6" sx={{ fontWeight: 600, color: '#f5f5f5' }}>
-            Proposed Strategies
-          </Typography>
-          <Box sx={{ mt: 1, backgroundColor: '#1e1e1e', p: 2, borderRadius: 2, overflowX: 'auto' }}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {response.proposedStrategies}
-            </ReactMarkdown>
-          </Box>
+      <Box sx={{ mt: 2 }}>
+        <Typography variant="h6" sx={{ fontWeight: 600, color: '#f5f5f5' }}>
+          Proposed Strategies
+        </Typography>
+        <Box
+          sx={{
+            mt: 1,
+            backgroundColor: '#1e1e1e',
+            p: 2,
+            borderRadius: 2,
+            overflowX: 'auto',
+            color: '#ffffff',
+          }}
+        >
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {strategies}
+          </ReactMarkdown>
         </Box>
-      )
+      </Box>
     );
   };
 
