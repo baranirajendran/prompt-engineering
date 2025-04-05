@@ -145,7 +145,7 @@ public class AiService {
 
     response.setScenarioSummary(sections[1].replaceAll("\\*\\*", "").trim());
     response.setPotentialPitfalls(extractBulletPoints(sections[2]));
-    response.setProposedStrategies(extractBulletPoints(sections[3]));
+    response.setProposedStrategies(sections[3].trim());
     response.setRecommendedResourcesStructured(extractStructuredResources(sections[4]));
 
     String disclaimer = sections.length >= 6 ? sections[5].trim() : "This is AI-generated content.";

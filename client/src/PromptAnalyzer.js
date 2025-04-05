@@ -91,18 +91,38 @@ export default function PromptAnalyzer() {
   };
 
   const renderStrategies = () => {
-    const rawStrategies = response?.proposedStrategies;
-    const strategies = typeof rawStrategies === 'string' ? rawStrategies.trim() : '';
+    try {
+      const raw = response?.proposedStrategies;
   
-    if (!strategies || strategies.length < 10) return null;
+      const strategies = typeof raw === 'string'
+        ? raw.trim()
+        : Array.isArray(raw)
+          ? raw.join('\n\n')
+          : '';
   
-    return (
-      <Box mt={4}>
-        <Typography variant="h6" gutterBottom>Proposed Strategies</Typography>
-        <ReactMarkdown>{strategies}</ReactMarkdown>
-      </Box>
-    );
-  };  
+      if (!strategies || strategies.length < 10) return null;
+  
+      return (
+        <Box mt={4}>
+          <Typography variant="h6" gutterBottom>
+            Proposed Strategies
+          </Typography>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {strategies}
+          </ReactMarkdown>
+        </Box>
+      );
+    } catch (err) {
+      console.error("❌ Error rendering proposed strategies:", err);
+      return (
+        <Box mt={4}>
+          <Typography variant="h6" color="error">
+            Failed to render strategies.
+          </Typography>
+        </Box>
+      );
+    }
+  };
 
   return (
     <Box sx={{ backgroundColor: '#121212', minHeight: '100vh', py: 4 }}>
