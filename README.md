@@ -115,23 +115,23 @@ If validation fails, appropriate error messages will be shown.
 📸 Screenshots
 ✅ Successful Prompt Submission
 
-Displays the prompt entered, selected constraints, and structured AI-generated recommendations:(screenshots/prompt-result.png)
+Displays the prompt entered, selected constraints, and structured AI-generated recommendations: ![Alt Text](screenshots/prompt-result.png)
 
 🔴 Validation: Scenario Too Short
 
-Displays an error if the scenario is less than 9 words:(screenshots/scenario-too-short.png)
+Displays an error if the scenario is less than 9 words: ![Alt Text](screenshots/scenario-too-short.png)
 
 🔴 Validation: Scenario Too Long
 
-If the scenario exceeds 1000 characters, an error is shown:(screenshots/validation-scenario-too-long.png)
+If the scenario exceeds 1000 characters, an error is shown: ![Alt Text](screenshots/validation-scenario-too-long.png)
 
 🔴 Validation: Less than 2 Constraints
 
-User must provide at least 2 constraints:(screenshots/too-few-constraints.png)
+User must provide at least 2 constraints: ![Alt Text](screenshots/too-few-constraints.png)
 
 🔄 Audience Level Dropdown
 
-Supports “Beginner”, “Intermediate”, and “Expert” audience levels:(screenshots/audience-dropdown.png)
+Supports “Beginner”, “Intermediate”, and “Expert” audience levels: ![Alt Text](screenshots/audience-dropdown.png)
 
 ---
 👨‍💻 Author
