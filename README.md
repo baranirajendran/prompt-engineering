@@ -123,7 +123,7 @@ Displays an error if the scenario is less than 9 words: ![Alt Text](client/publi
 
 🔴 Validation: Scenario Too Long
 
-If the scenario exceeds 1000 characters, an error is shown: ![Alt Text](client/public/screenshots/validation-scenario-too-long.png)
+If the scenario exceeds 1000 characters, an error is shown: ![Alt Text](client/public/screenshots/scenario-too-long.png)
 
 🔴 Validation: Less than 2 Constraints
 
