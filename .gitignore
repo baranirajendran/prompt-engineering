@@ -61,3 +61,6 @@ Desktop.ini
 /src/main/frontend/build/
 /src/main/frontend/node/
 /src/main/frontend/node_modules/
+
+# Ignore Static Files
+/src/main/resources/static 
