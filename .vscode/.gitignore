@@ -1,0 +1,52 @@
+# Java build files
+/target/
+*.class
+*.log
+
+# Maven
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Spring Boot dev tools
+.spring-boot-devtools.properties
+
+# Node / React
+**/node_modules/
+**/build/
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# OS junk files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# dotenv
+.env
+
+# Heroku
+.heroku/
