@@ -6,7 +6,7 @@ import java.util.Map;
 public class ScenarioAnalysisResponse {
     private String scenarioSummary;
     private List<String> potentialPitfalls;
-    private List<String> proposedStrategies;
+    private String proposedStrategies;
     private List<String> recommendedResources;
     private String disclaimer;
 
@@ -36,11 +36,11 @@ public class ScenarioAnalysisResponse {
         this.potentialPitfalls = potentialPitfalls;
     }
 
-    public List<String> getProposedStrategies() {
+    public String getProposedStrategies() {
         return proposedStrategies;
     }
-
-    public void setProposedStrategies(List<String> proposedStrategies) {
+    
+    public void setProposedStrategies(String proposedStrategies) {
         this.proposedStrategies = proposedStrategies;
     }
 

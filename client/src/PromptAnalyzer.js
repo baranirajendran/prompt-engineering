@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AddIcon from '@mui/icons-material/Add';
+import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown';
 import {
   TextField,
   Button,
@@ -27,7 +29,8 @@ export default function PromptAnalyzer() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [scenarioError, setScenarioError] = useState("");
+  const [scenarioError, setScenarioError] = useState('');
+  const [constraintError, setConstraintError] = useState('');
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -45,6 +48,7 @@ export default function PromptAnalyzer() {
     if (constraintInput.trim()) {
       setConstraints([...constraints, constraintInput.trim()]);
       setConstraintInput('');
+      setConstraintError('');
     }
   };
 
@@ -63,8 +67,13 @@ export default function PromptAnalyzer() {
         return;
       }
   
+      if (constraints.length < 2) {
+        setConstraintError("Please provide at least 2 constraints.");
+        return;
+      }
+
       setScenarioError("");
-      setError("");
+      setConstraintError("");
       setLoading(true);
       setResponse(null);
     try {
@@ -83,37 +92,34 @@ export default function PromptAnalyzer() {
   };
 
   const renderStrategies = () => {
-    const sections = [];
-    let currentSection = [];
-    let currentTitle = '';
+    try {
+      const raw = response?.proposedStrategies;
+  
+      const strategies = typeof raw === 'string'
+        ? raw.trim()
+        : Array.isArray(raw)
+          ? raw.join('\n\n')
+          : '';
+  
+      if (!strategies || strategies.length < 10) return null;
 
-    response.proposedStrategies?.forEach((line) => {
-      if (line.startsWith('Pitfall:')) {
-        if (currentTitle) {
-          sections.push({ title: currentTitle, items: currentSection });
-        }
-        currentTitle = line;
-        currentSection = [];
-      } else {
-        currentSection.push(line);
-      }
-    });
-    if (currentTitle) {
-      sections.push({ title: currentTitle, items: currentSection });
+      return (
+        <Box mt={4}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {strategies}
+          </ReactMarkdown>
+        </Box>
+      );
+    } catch (err) {
+      console.error("❌ Error rendering proposed strategies:", err);
+      return (
+        <Box mt={4}>
+          <Typography variant="h6" color="error">
+            Failed to render strategies.
+          </Typography>
+        </Box>
+      );
     }
-
-    return sections.map((section, idx) => (
-      <Box key={idx} sx={{ mb: 3 }}>
-        <Typography variant="subtitle1" sx={{ fontWeight: 600, color: '#f5f5f5' }}>
-          {section.title}
-        </Typography>
-        <ul style={{ marginLeft: '1.5em' }}>
-          {section.items.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </Box>
-    ));
   };
 
   return (
@@ -129,7 +135,7 @@ export default function PromptAnalyzer() {
           gap={4}
           justifyContent="space-between"
         >
-          {/* Left Container */}
+          {/* Left Panel */}
           <Paper elevation={3} sx={{ flex: 1, p: 4, backgroundColor: '#2a2a2a', color: '#e0e0e0' }}>
             <Typography variant="h6" gutterBottom>Enter Scenario & Constraints</Typography>
 
@@ -144,6 +150,7 @@ export default function PromptAnalyzer() {
               onChange={(e) => setScenario(e.target.value)}
               error={!!scenarioError}
               helperText={scenarioError}
+              inputProps={{ 'data-gramm': 'false' }}
               InputProps={{ style: { color: '#e0e0e0' } }}
               InputLabelProps={{ style: { color: '#bbbbbb' } }}
               sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#555' } } }}
@@ -153,7 +160,6 @@ export default function PromptAnalyzer() {
               <InputLabel id="audience-label" sx={{ color: '#bbbbbb' }}>Audience Level</InputLabel>
               <Select
                 labelId="audience-label"
-                id="audience-select"
                 value={audienceLevel}
                 label="Audience Level"
                 onChange={(e) => setAudienceLevel(e.target.value)}
@@ -170,12 +176,19 @@ export default function PromptAnalyzer() {
                 label="Add Constraint"
                 value={constraintInput}
                 onChange={(e) => setConstraintInput(e.target.value)}
+                inputProps={{ 'data-gramm': 'false' }}
                 InputProps={{ style: { color: '#e0e0e0' } }}
                 InputLabelProps={{ style: { color: '#bbbbbb' } }}
                 sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#555' } } }}
               />
-              <Button variant="contained" onClick={handleAddConstraint}><AddIcon /></Button>
+              <Button variant="contained" onClick={handleAddConstraint}>+</Button>
             </Stack>
+
+            {constraintError && (
+              <Typography variant="body2" color="error" mt={1}>
+                {constraintError}
+              </Typography>
+            )}
 
             <Stack direction="row" spacing={1} flexWrap="wrap" mt={2}>
               {constraints.map((item, index) => (
