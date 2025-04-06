@@ -39,6 +39,8 @@ Create or edit the `src/main/resources/application.properties` file and replace:
 
 ```properties
 gemini.api.key=REPLACE_WITH_YOUR_GEMINI_API_KEY
+or
+openai.api-key=REPLACE_WITH_YOUR_OpenAI_API_KEY
 ```
 
 ### 2. Build and Run Locally
