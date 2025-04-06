@@ -57,6 +57,7 @@ Desktop.ini
 # Heroku
 .heroku/
 
-# React build and dependencies
-src/main/frontend/node_modules/
-src/main/frontend/build/
+# Ignore frontend build and dependencies
+/src/main/frontend/build/
+/src/main/frontend/node/
+/src/main/frontend/node_modules/
