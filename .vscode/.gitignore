@@ -3,6 +3,9 @@
 *.class
 *.log
 
+# Maven build output
+/target/
+
 # Maven
 .mvn/
 !/.mvn/wrapper/maven-wrapper.jar
@@ -12,6 +15,9 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 dependency-reduced-pom.xml
+
+# Ignore locally installed Node binary
+src/main/frontend/node/node
 
 # Spring Boot dev tools
 .spring-boot-devtools.properties
@@ -50,3 +56,7 @@ Desktop.ini
 
 # Heroku
 .heroku/
+
+# React build and dependencies
+src/main/frontend/node_modules/
+src/main/frontend/build/

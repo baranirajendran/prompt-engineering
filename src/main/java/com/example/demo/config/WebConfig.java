@@ -9,7 +9,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(@NonNull CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("https://prompt-engineering-982d3a6ceefe.herokuapp.com")
+                .allowedOrigins("https://prompt-engineering-c02ed45f9b1e.herokuapp.com/")
                 .allowedMethods("GET", "POST")
                 .allowedHeaders("*");
     }
