@@ -39,7 +39,7 @@ out/
 # VS Code
 .vscode/
 
-# macOS
+# macOS system files
 .DS_Store
 
 # Logs
