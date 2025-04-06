@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AddIcon from '@mui/icons-material/Add';
+import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import {
   TextField,
@@ -101,12 +102,9 @@ export default function PromptAnalyzer() {
           : '';
   
       if (!strategies || strategies.length < 10) return null;
-  
+
       return (
         <Box mt={4}>
-          <Typography variant="h6" gutterBottom>
-            Proposed Strategies
-          </Typography>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {strategies}
           </ReactMarkdown>

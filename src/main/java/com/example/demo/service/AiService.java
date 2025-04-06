@@ -1,9 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.config.GeminiConfig;
-import com.example.demo.config.OpenAiConfig;
-import com.example.demo.model.OpenAiRequest;
-import com.example.demo.model.OpenAiMessage;
 import com.example.demo.model.ScenarioAnalysisRequest;
 import com.example.demo.model.ScenarioAnalysisResponse;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -21,44 +18,6 @@ import java.util.Map;
 
 @Service
 public class AiService {
-
-    // @Autowired
-    // private OpenAiConfig openAiConfig;
-
-    // private final RestTemplate restTemplate = new RestTemplate();
-    // private final ObjectMapper objectMapper = new ObjectMapper();
-
-    // public ScenarioAnalysisResponse generateAnalysis(ScenarioAnalysisRequest request) {
-    //     String prompt = buildPrompt(request);
-    //     System.out.println("Using OpenAI model: " + openAiConfig.getModel());
-    //     // ✅ Use a Java object instead of raw JSON string
-    //     OpenAiRequest openAiRequest = new OpenAiRequest(
-    //         openAiConfig.getModel(),
-    //         List.of(new OpenAiMessage("user", prompt))
-    //     );
-    //     HttpHeaders headers = new HttpHeaders();
-    //     headers.setContentType(MediaType.APPLICATION_JSON);
-    //     headers.setBearerAuth(openAiConfig.getApiKey());
-
-    //     HttpEntity<OpenAiRequest> entity = new HttpEntity<>(openAiRequest, headers);
-
-    //     ResponseEntity<String> responseEntity = restTemplate.exchange(
-    //             "https://api.openai.com/v1/chat/completions",
-    //             HttpMethod.POST,
-    //             entity,
-    //             String.class
-    //     );
-
-    //     String content;
-    //     try {
-    //         JsonNode root = objectMapper.readTree(responseEntity.getBody());
-    //         content = root.path("choices").get(0).path("message").path("content").asText();
-    //     } catch (Exception e) {
-    //         throw new RuntimeException("Failed to parse OpenAI response", e);
-    //     }
-
-    //     return parseApiResponse(content);
-    // }
 
     @Autowired
     private GeminiConfig geminiConfig;

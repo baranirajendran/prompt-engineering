@@ -43,7 +43,7 @@ public void testCase1_EducationReformInitiative() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Education Reform Initiative");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -67,7 +67,7 @@ public void testCase2_HealthcareSystemModernization() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Healthcare System Modernization");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -91,7 +91,7 @@ public void testCase3_EnvironmentalSustainabilityProject() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Environmental Sustainability Project");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -115,7 +115,7 @@ public void testCase4_NonProfitCapacityBuilding() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Non-Profit Capacity Building");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -139,7 +139,7 @@ public void testCase5_TechConferenceOrganization() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Tech Conference Organization");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -163,7 +163,7 @@ public void testCase6_FinancialSystemMigration() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Financial System Migration");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -187,7 +187,7 @@ public void testCase7_ProductLaunchStrategy() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Product Launch Strategy");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -211,7 +211,7 @@ public void testCase8_PersonalDebtManagement() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Personal Debt Management");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -235,7 +235,7 @@ public void testCase9_UrbanTransportationPolicy() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for Urban Transportation Policy");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 
@@ -259,7 +259,7 @@ public void testCase10_SaaSStartupScaling() throws Exception {
     ScenarioAnalysisResponse mockResponse = new ScenarioAnalysisResponse();
     mockResponse.setScenarioSummary("Test Summary for SaaS Startup Scaling");
     mockResponse.setPotentialPitfalls(List.of("Example Risk"));
-    mockResponse.setProposedStrategies(List.of("Example Strategy"));
+    mockResponse.setProposedStrategies("Example Strategy");
     mockResponse.setRecommendedResources(List.of("Example Tool"));
     mockResponse.setDisclaimer("Test Disclaimer");
 

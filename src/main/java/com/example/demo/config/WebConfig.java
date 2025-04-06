@@ -15,7 +15,7 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    public void addResourceHandlers(@SuppressWarnings("null") ResourceHandlerRegistry registry) {
         // Serve all static files from classpath:/static/ (where React gets built into)
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/");
